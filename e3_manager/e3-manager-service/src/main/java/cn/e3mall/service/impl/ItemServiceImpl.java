@@ -1,8 +1,12 @@
 package cn.e3mall.service.impl;
 
 import cn.e3mall.common.pojo.EasyUIDataGridResult;
+import cn.e3mall.common.pojo.EasyUITreeNode;
+import cn.e3mall.mapper.TbItemCatMapper;
 import cn.e3mall.mapper.TbItemMapper;
 import cn.e3mall.pojo.TbItem;
+import cn.e3mall.pojo.TbItemCat;
+import cn.e3mall.pojo.TbItemCatExample;
 import cn.e3mall.pojo.TbItemExample;
 import cn.e3mall.pojo.TbItemExample.Criteria;
 import cn.e3mall.service.ItemService;
@@ -11,12 +15,14 @@ import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class ItemServiceImpl implements ItemService {
     @Autowired
     private TbItemMapper tbItemMapper;
+
 
     @Override
     public TbItem getItemById(Long itemId) {
@@ -52,4 +58,6 @@ public class ItemServiceImpl implements ItemService {
         gridResult.setTotal(info.getTotal());
         return gridResult;
     }
+
+
 }
